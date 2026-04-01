@@ -10,7 +10,7 @@ An [Alfred](https://www.alfredapp.com/) workflow for controlling [LM Studio](htt
 
 Trigger the `lms` keyword to check server status, start or stop the local inference server (with optional CORS and LAN bindings), browse and load downloaded models with one keystroke, and unload running models individually or all at once. macOS notifications confirm each action.
 
-<video src="assets/lms.mp4" autoplay loop muted playsinline></video>
+<video src="https://github.com/user-attachments/assets/b001bf6f-beeb-4aa6-b39f-f6c5a2f80de6" autoplay loop muted playsinline></video>
 
 ## Usage
 
