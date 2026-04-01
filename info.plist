@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.romanvolkov.lms-alfred</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>SF-000001-0000-0000-0000-000000000001</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>RS-000001-0000-0000-0000-000000000001</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>RS-000001-0000-0000-0000-000000000001</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>NT-000001-0000-0000-0000-000000000001</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Roman Volkov</string>
+	<key>description</key>
+	<string>Manage LM Studio local server and models</string>
+	<key>name</key>
+	<string>LM Studio</string>
+	<key>objects</key>
+	<array>
+
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>SF-000001-0000-0000-0000-000000000001</string>
+			<key>version</key>
+			<integer>3</integer>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumentreplacementicons</key>
+				<false/>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>lms</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Checking LM Studio…</string>
+				<key>script</key>
+				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
+python3 src/filter.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Manage LM Studio server and models</string>
+				<key>title</key>
+				<string>LM Studio</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>RS-000001-0000-0000-0000-000000000001</string>
+			<key>version</key>
+			<integer>2</integer>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
+python3 src/action.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>NT-000001-0000-0000-0000-000000000001</string>
+			<key>version</key>
+			<integer>1</integer>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>LM Studio</string>
+			</dict>
+		</dict>
+
+	</array>
+	<key>readme</key>
+	<string>## LM Studio
+
+**Keyword:** lms
+
+- lms          — server status, start/stop
+- lms load     — browse and load a downloaded model (Tab from main menu)
+- lms unload   — browse and unload a loaded model (Tab from main menu)
+	</string>
+	<key>uidata</key>
+	<dict>
+		<key>SF-000001-0000-0000-0000-000000000001</key>
+		<dict>
+			<key>xpos</key>
+			<real>60</real>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>RS-000001-0000-0000-0000-000000000001</key>
+		<dict>
+			<key>xpos</key>
+			<real>340</real>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>NT-000001-0000-0000-0000-000000000001</key>
+		<dict>
+			<key>xpos</key>
+			<real>620</real>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
